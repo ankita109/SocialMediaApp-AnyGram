@@ -59,15 +59,16 @@ export default function Profile() {
         {user.followers.map(obj=>{
           const followeruser=users.find((o)=>o._id===obj)
 
-          return <div className='d-flex align-items-center bs1 p-1 mt-2'>
-            {followeruser.profilePicUrl === "" ?
+          return( <div className='d-flex align-items-center bs1 p-1 mt-2'>
+            {followeruser?.profilePicUrl === "" ?
              (<span className='profilepic1 d-flex align-items-center'>{followeruser.username[0]}</span>) 
-             : (<img src={followeruser.profilePicUrl} height='30' width='30' style={{borderRadius:'50%'}} alt="" />)}
+             : (<img src={followeruser?.profilePicUrl} height='30' width='30' style={{borderRadius:'50%'}} alt="" />)}
              <div className='ms-2'>
-              <div style={{margin:2}}><Link style={{textDecoration:'inherit'}}>{followeruser.username}</Link></div>
-              <div style={{margin:2}}>Since {moment(followeruser.createdAt).format('MMM DD YYYY')}</div>
+              <div style={{margin:2}}><Link style={{textDecoration:'inherit'}}>{followeruser?.username}</Link></div>
+              <div style={{margin:2}}>Since {moment(followeruser?.createdAt).format('MMM DD YYYY')}</div>
              </div>
           </div>
+          );
         })}
       </Modal>
 
@@ -78,15 +79,16 @@ export default function Profile() {
         {user.following.map(obj=>{
           const followinguser=users.find((o)=>o._id===obj)
 
-          return <div className='d-flex align-items-center bs1 p-1 mt-2'>
-            {followinguser.profilePicUrl === "" ?
+          return (<div className='d-flex align-items-center bs1 p-1 mt-2'>
+            {followinguser?.profilePicUrl === "" ?
              (<span className='profilepic1 d-flex align-items-center'>{followinguser.username[0]}</span>) 
-             : (<img src={followinguser.profilePicUrl} height='30' width='30' style={{borderRadius:'50%'}} alt="" />)}
+             : (<img src={followinguser?.profilePicUrl} height='30' width='30' style={{borderRadius:'50%'}} alt="" />)}
              <div className='ms-2'>
-              <div style={{margin:2}}><Link style={{textDecoration:'inherit'}}>{followinguser.username}</Link></div>
-              <div style={{margin:2}}>Since {moment(followinguser.createdAt).format('MMM DD YYYY')}</div>
+              <div style={{margin:2}}><Link style={{textDecoration:'inherit'}}>{followinguser?.username}</Link></div>
+              <div style={{margin:2}}>Since {moment(followinguser?.createdAt).format('MMM DD YYYY')}</div>
              </div>
           </div>
+          );
         })}
       </Modal>
       
