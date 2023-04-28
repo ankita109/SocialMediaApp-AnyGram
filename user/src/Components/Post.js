@@ -34,10 +34,10 @@ export default function Post({ post, postInProfilePage }) {
             <div className='d-flex justify-content-between align-items-center '>
 
                 <div className='d-flex align-items-center'>
-                    {/* for profile pic or name displaying on home page */}
+                   
                     {post.user.profilePicUrl === "" ? (<span className='profilepic1 d-flex align-items-center'>{post.user.username[0]}</span>) : (<img src={post.user.profilePicUrl} height='30' width='30' style={{ borderRadius: '50%' }} alt="" />)}
 
-                    {/* for diplaying user name */}
+                   
                     <Link style={{ textDecoration: 'inherit' }} className='ms-2' to={`/profile/${post.user._id}`}>{post.user.username}</Link>
                 </div>
                 <div>
